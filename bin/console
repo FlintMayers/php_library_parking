@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$file = __DIR__ . '/../cache/parkingContainer.php';
+
+if (file_exists($file)) {
+    require_once $file;
+    $container = new parkingContainer();
+} else {
+    $containerFactory = new \Parking\ContainerFactory();
+
+    $container = $containerFactory->create(__DIR__ . '/../cache/parkingContainer.php');
+    $car = $container->get('parking.car');
+    $parking = $container->get('parking.car');
+}

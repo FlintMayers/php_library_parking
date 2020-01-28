@@ -1,0 +1,7 @@
+services:
+    parking.car:
+        class: Parking\Model\Car
+        public: true
+    parking.parking:
+        class: Parking\Model\Parking
+        public: true
